@@ -32,6 +32,7 @@ Recommended files:
 - `artifacts/screenshots/05-rivals-config.png`
 - `artifacts/screenshots/06-approval-center.png`
 - `artifacts/screenshots/07-child-dashboard.png`
+- `artifacts/screenshots/08-reward-shop.png`
 - `artifacts/screenshots/09-secure-parent-return.png`
 
 ## Solink Role Alignment

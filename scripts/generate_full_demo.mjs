@@ -1,5 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { chromium } from 'playwright';
 
 const baseUrl = process.env.DEMO_BASE_URL ?? 'http://127.0.0.1:3000';
@@ -18,6 +20,7 @@ const demoPassword = `DemoPass!${String(timestamp).slice(-6)}`;
 const demoPin = '2468';
 
 const steps = [];
+const execFileAsync = promisify(execFile);
 
 async function loadLocalEnv() {
   const envPath = path.resolve(process.cwd(), '.env.local');
@@ -66,6 +69,18 @@ async function ensureDemoUser(email, password) {
   return { ok: false, reason: message || `status_${response.status}` };
 }
 
+async function seedDemoScene() {
+  const { stdout } = await execFileAsync('node', ['show-the-work/scripts/seed_demo_scene.mjs'], {
+    cwd: process.cwd()
+  });
+  const parsed = JSON.parse(stdout.trim());
+  return {
+    familyId: parsed.familyId,
+    childId: parsed.childId,
+    childName: parsed.childName
+  };
+}
+
 async function ensureDirs() {
   await fs.mkdir(screenshotsDir, { recursive: true });
   await fs.mkdir(rawVideoDir, { recursive: true });
@@ -102,6 +117,8 @@ async function run() {
   page.setDefaultTimeout(45000);
 
   try {
+    const demoScene = await seedDemoScene();
+
     await page.goto(`${baseUrl}/register`, { waitUntil: 'domcontentloaded' });
     await page.getByPlaceholder('name@email.com').fill(demoEmail);
     await page.getByPlaceholder('密码（至少 6 位）').fill(demoPassword);
@@ -116,7 +133,7 @@ async function run() {
 
     await page.goto(`${baseUrl}/parent/tasks/new`, { waitUntil: 'domcontentloaded' });
     await page.getByPlaceholder('family_id（UUID，例如 00000000-0000-0000-0000-000000000001）').fill(
-      '00000000-0000-0000-0000-000000000001'
+      demoScene.familyId
     );
     await page.getByPlaceholder('任务名称（例如：背 20 个单词）').fill('英语单词复习 20 分钟');
     await page.getByRole('button', { name: '文字' }).click();
@@ -125,17 +142,22 @@ async function run() {
     await capture(page, '04-task-design-preview', 'Task templates, assignment, and publish-preview flow');
 
     await page.goto(`${baseUrl}/parent/rivals`, { waitUntil: 'domcontentloaded' });
-    await page.getByPlaceholder('family_id UUID').fill('00000000-0000-0000-0000-000000000001');
+    await page.getByPlaceholder('family_id UUID').fill(demoScene.familyId);
     await page.getByRole('button', { name: '重新抽' }).click();
     await capture(page, '05-rivals-config', 'Rivals setup for motivation and leaderboard context');
 
     await page.goto(`${baseUrl}/parent/approvals`, { waitUntil: 'domcontentloaded' });
-    await page.getByPlaceholder('family_id UUID').fill('00000000-0000-0000-0000-000000000001');
+    await page.getByPlaceholder('family_id UUID').fill(demoScene.familyId);
     await page.getByRole('button', { name: '加载待审批' }).click();
     await page.waitForTimeout(800);
     await capture(page, '06-approval-center', 'Approval center for review and quality control');
 
-    await page.goto(`${baseUrl}/child?preview=1&child=%E5%AD%A9%E5%AD%90A`, { waitUntil: 'domcontentloaded' });
+    await page.goto(
+      `${baseUrl}/child?preview=1&familyId=${encodeURIComponent(demoScene.familyId)}&child=${encodeURIComponent(
+        demoScene.childName
+      )}&childId=${encodeURIComponent(demoScene.childId)}`,
+      { waitUntil: 'domcontentloaded' }
+    );
     await page.waitForTimeout(1200);
     await capture(page, '07-child-dashboard', 'Child view with task board and ranking context');
 

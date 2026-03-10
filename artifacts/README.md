@@ -9,6 +9,7 @@ Public-safe portfolio assets used by this repository.
 - `COVER_TEMPLATE.svg` - editable visual cover template (export to PNG)
 - `ASSET_PRODUCTION_RUNBOOK.md` - step-by-step production sequence
 - `DEMO_FLOW_NOTES.md` - generated end-to-end capture notes
+- `VOICEOVER_90S_EN.md` - scene-aligned 90-second English narration script
 - `screenshots/` - finalized screenshots
 - `demo.mp4` - walkthrough video captured from local app run
 - `architecture.png` - architecture visual for portfolio context
