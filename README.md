@@ -21,17 +21,18 @@ If the image is not visible yet, export `artifacts/COVER_TEMPLATE.svg` to `artif
 Add screenshots to `artifacts/screenshots/` using the checklist:
 [artifacts/SCREENSHOT_CHECKLIST.md](artifacts/SCREENSHOT_CHECKLIST.md)
 - Current screenshots are captured from a live local run of the app.
+- Full capture notes: [artifacts/DEMO_FLOW_NOTES.md](artifacts/DEMO_FLOW_NOTES.md)
 
 Recommended files:
 
-- `artifacts/screenshots/01-home.png`
-- `artifacts/screenshots/02-parent-dashboard.png`
-- `artifacts/screenshots/03-task-creation-flow.png`
-- `artifacts/screenshots/04-child-task-list.png`
-- `artifacts/screenshots/05-submission-review.png`
-- `artifacts/screenshots/06-points-rewards.png`
-- `artifacts/screenshots/07-leaderboard-or-rivals.png`
-- `artifacts/screenshots/08-security-stepup.png`
+- `artifacts/screenshots/01-register-form.png`
+- `artifacts/screenshots/02-register-feedback.png`
+- `artifacts/screenshots/03-parent-tutorial.png`
+- `artifacts/screenshots/04-task-design-preview.png`
+- `artifacts/screenshots/05-rivals-config.png`
+- `artifacts/screenshots/06-approval-center.png`
+- `artifacts/screenshots/07-child-dashboard.png`
+- `artifacts/screenshots/09-secure-parent-return.png`
 
 ## Solink Role Alignment
 
