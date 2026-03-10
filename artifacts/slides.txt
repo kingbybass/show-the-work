@@ -1,0 +1,17 @@
+file 'screenshots/01-home.png'
+duration 12
+file 'screenshots/02-parent-dashboard.png'
+duration 12
+file 'screenshots/03-task-creation-flow.png'
+duration 12
+file 'screenshots/04-child-task-list.png'
+duration 12
+file 'screenshots/05-submission-review.png'
+duration 12
+file 'screenshots/06-points-rewards.png'
+duration 12
+file 'screenshots/07-leaderboard-or-rivals.png'
+duration 12
+file 'screenshots/08-security-stepup.png'
+duration 12
+file 'screenshots/08-security-stepup.png'
