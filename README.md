@@ -14,11 +14,13 @@ If the image is not visible yet, export `artifacts/COVER_TEMPLATE.svg` to `artif
 
 - Demo video: `artifacts/demo.mp4`
 - Storyboard: [artifacts/VIDEO_STORYBOARD.md](artifacts/VIDEO_STORYBOARD.md)
+- Current repo includes an auto-generated placeholder demo that should be replaced with a real product walkthrough.
 
 ## Screenshot Gallery
 
 Add screenshots to `artifacts/screenshots/` using the checklist:
 [artifacts/SCREENSHOT_CHECKLIST.md](artifacts/SCREENSHOT_CHECKLIST.md)
+- Current repo includes auto-generated placeholder screenshots that should be replaced with real workflow captures.
 
 Recommended files:
 
