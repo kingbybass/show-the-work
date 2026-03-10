@@ -1,27 +1,63 @@
 # Show the Work | Technical Product Manager Portfolio
 
-This repository is a public portfolio tailored for the **Technical Product Manager** role at Solink.
+Public portfolio tailored for the **Technical Product Manager (Devices & Infrastructure)** role at **Solink**.
 
-It demonstrates how I drive platform outcomes across product strategy, infrastructure reliability, security posture, and execution discipline.
+This repository demonstrates platform-level product leadership across strategy, reliability, security, and execution.
 
-## Quick Navigation
+## Portfolio Cover
 
-- `docs/01-role-fit-solink.md` - role-fit matrix against the job requirements
-- `docs/02-product-strategy-roadmap.md` - 12-month strategy and roadmap model
-- `docs/03-platform-reliability-security.md` - reliability/security operating model
-- `docs/04-cloud-cost-tradeoffs.md` - cost-performance-risk tradeoff framework
-- `docs/05-ai-assisted-pm-workflow.md` - AI-assisted PM research and prototyping workflow
-- `case-studies/kingby-case.md` - end-to-end case study from product problem to delivery
-- `artifacts/` - architecture diagrams, screenshots, and demo placeholders
+![Portfolio Cover](artifacts/cover.png)
 
-## Product Leadership Themes
+If the image is not visible yet, export `artifacts/COVER_TEMPLATE.svg` to `artifacts/cover.png`.
 
-- Platform-first product strategy that unlocks downstream team velocity
-- Clear reliability targets (SLO/SLA) tied to business trust outcomes
-- Security-by-design and compliance-aware prioritization
-- Data-informed decision making across speed, risk, and cloud spend
-- Cross-functional execution with engineering, SecDevOps, and stakeholders
+## 90-120s Demo
+
+- Demo video: `artifacts/demo.mp4`
+- Storyboard: [artifacts/VIDEO_STORYBOARD.md](artifacts/VIDEO_STORYBOARD.md)
+
+## Screenshot Gallery
+
+Add screenshots to `artifacts/screenshots/` using the checklist:
+[artifacts/SCREENSHOT_CHECKLIST.md](artifacts/SCREENSHOT_CHECKLIST.md)
+
+Recommended files:
+
+- `artifacts/screenshots/01-home.png`
+- `artifacts/screenshots/02-parent-dashboard.png`
+- `artifacts/screenshots/03-task-creation-flow.png`
+- `artifacts/screenshots/04-child-task-list.png`
+- `artifacts/screenshots/05-submission-review.png`
+- `artifacts/screenshots/06-points-rewards.png`
+- `artifacts/screenshots/07-leaderboard-or-rivals.png`
+- `artifacts/screenshots/08-security-stepup.png`
+
+## Solink Role Alignment
+
+1. Platform strategy ownership
+- Outcome-driven roadmap design for foundational systems and team velocity.
+
+2. Reliability and trust
+- Workflow integrity controls, idempotency mindset, and operational runbook discipline.
+
+3. Security and compliance awareness
+- Step-up verification patterns and privileged operation boundaries.
+
+4. Cloud cost and performance tradeoffs
+- Structured decisions balancing speed, risk, and infrastructure efficiency.
+
+5. AI-assisted product workflow
+- Practical AI use in research, analysis, prototyping, and communication artifacts.
+
+## Core Portfolio Documents
+
+- [Role Fit Matrix](docs/01-role-fit-solink.md)
+- [12-Month Strategy and Roadmap](docs/02-product-strategy-roadmap.md)
+- [Reliability and Security Operating Model](docs/03-platform-reliability-security.md)
+- [Cloud Cost Tradeoff Framework](docs/04-cloud-cost-tradeoffs.md)
+- [AI-Assisted PM Workflow](docs/05-ai-assisted-pm-workflow.md)
+- [Case Study: Kingby](case-studies/kingby-case.md)
+- [Artifacts Runbook](artifacts/ASSET_PRODUCTION_RUNBOOK.md)
 
 ## Scope Note
 
-This is a showcase repository for public review. It intentionally focuses on product/technical leadership artifacts rather than private business source code.
+This repository is intentionally public-safe and does not include private business source code or sensitive configuration.
